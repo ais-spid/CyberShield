@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,6 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Cairo', sans-serif;
             margin: 0;
@@ -20,12 +23,9 @@
             color: #fff;
             overflow: hidden;
             position: relative;
-            background-image: url('image/backgraound.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background: url('image/backgraound.jpg') center/cover fixed no-repeat;
         }
-        
+
         body::before {
             content: "";
             position: absolute;
@@ -34,22 +34,22 @@
             backdrop-filter: blur(4px);
             z-index: 0;
         }
-        
+
         .container {
             position: relative;
             z-index: 2;
-            max-width: 550px;
             width: 90%;
+            max-width: 480px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 25px;
             backdrop-filter: blur(20px);
-            padding: 45px 30px;
+            padding: 35px 20px;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 35px rgba(0, 180, 255, 0.2);
+            box-shadow: 0 0 25px rgba(0, 180, 255, 0.2);
             animation: fadeIn 1.2s ease forwards;
         }
-        
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -60,90 +60,89 @@
                 transform: translateY(0);
             }
         }
-        /* ===== خلفية زجاجية للشعار ===== */
-        
+
         .logo-wrapper {
             position: relative;
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 25px;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 1.15);
+            background: rgba(255, 255, 255, 0.12);
             backdrop-filter: blur(10px);
-            box-shadow: inset 0 0 15px rgba(255, 254, 254, 0.3), 0 0 30px rgba(0, 255, 255, 0.2);
+            box-shadow: inset 0 0 10px rgba(255,255,255,0.2), 0 0 25px rgba(0,255,255,0.2);
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255,255,255,0.15);
         }
-        
+
         .logo-wrapper::before {
             content: "";
             position: absolute;
-            top: -30%;
-            left: -30%;
-            width: 80%;
-            height: 80%;
-            background: rgba(255, 255, 255, 0.5);
+            top: -25%;
+            left: -25%;
+            width: 70%;
+            height: 70%;
+            background: rgba(255,255,255,0.4);
             filter: blur(20px);
             transform: rotate(25deg);
         }
-        
+
         .logo {
-            width: 100%;
+            width: 90%;
             height: auto;
             z-index: 2;
             animation: pulse 3s ease-in-out infinite;
         }
-        
+
         h1 {
             margin: 0 0 8px;
             font-weight: 800;
-            font-size: 30px;
+            font-size: 26px;
             background: linear-gradient(to right, #00b3ff, #00ffcc, #ff0033);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 0 0 25px rgba(0, 200, 255, 0.3);
         }
-        
+
         .desc {
-            font-size: 16px;
+            font-size: 15px;
             color: #dceefb;
-            margin: 12px 0;
-            line-height: 1.8;
+            margin: 10px 0;
+            line-height: 1.7;
         }
-        
+
         .link-btn {
             display: block;
             background: #003366;
             color: white;
-            padding: 13px 0;
+            padding: 12px 0;
             border-radius: 40px;
             text-decoration: none;
-            margin: 14px auto;
-            width: 90%;
-            max-width: 340px;
+            margin: 10px auto;
+            width: 100%;
+            max-width: 330px;
             font-weight: 700;
             transition: all 0.3s ease;
             border: 1px solid #007bff;
-            font-size: 16px;
+            font-size: 15px;
         }
-        
+
         .link-btn:hover {
             background: linear-gradient(90deg, #007bff, #00cc88);
             box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
             transform: translateY(-3px);
         }
-        
+
         .social-icons {
-            margin: 30px 0;
+            margin: 25px 0 15px;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 18px;
+            gap: 15px;
         }
-        
+
         .social-icons a {
             display: inline-flex;
             text-decoration: none;
@@ -151,44 +150,60 @@
             justify-content: center;
             color: #fff;
             background: rgba(255, 255, 255, 0.08);
-            font-size: 22px;
-            width: 50px;
-            height: 50px;
+            font-size: 20px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
         }
-        
+
         .social-icons a:hover {
             background: linear-gradient(90deg, #007bff, #00cc88);
-            transform: scale(1.15);
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
         }
-        
+
         footer {
-            margin-top: 30px;
+            margin-top: 20px;
             font-size: 13px;
             color: #81d4fa;
             opacity: 0.8;
         }
-        
-        @media (max-width: 480px) {
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+        }
+
+        /* تحسين العرض على الشاشات الصغيرة جدًا */
+        @media (max-width: 400px) {
+            .container {
+                padding: 25px 15px;
+            }
+
             .logo-wrapper {
-                width: 180px;
-                height: 180px;
+                width: 120px;
+                height: 120px;
             }
-            .logo {
-                width: 110px;
-            }
+
             h1 {
-                font-size: 24px;
+                font-size: 22px;
             }
+
             .desc {
-                font-size: 14px;
+                font-size: 13px;
             }
+
             .link-btn {
                 font-size: 14px;
-                padding: 11px 0;
+                padding: 10px 0;
+            }
+
+            .social-icons a {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
             }
         }
     </style>
@@ -196,11 +211,11 @@
 
 <body>
     <div class="container">
-        <!-- غلاف زجاجي للشعار -->
         <div class="logo-wrapper">
             <img src="image/logo.png" alt="شعار دروع سايبر" class="logo" />
         </div>
 
+        <h1>دروع سايبر</h1>
         <p class="desc">🛡️ الشركة الرائدة في الأمن السيبراني وحلول حماية البيانات.</p>
         <p class="desc">نؤمن أن الأمان الرقمي هو أساس الثقة في عالم التقنية الحديثة.</p>
 
@@ -209,21 +224,18 @@
             <a href="https://www.linkedin.com/company/cyber-shields-sa/" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://x.com/CyberShieldsSA" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="https://www.instagram.com/cybershields.sa/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <!-- إضافة البريد الإلكتروني -->
             <a href="mailto:Info@cybershields.com.sa"><i class="fas fa-envelope"></i></a>
         </div>
 
         <div class="links">
             <a href="https://cybershields.com.sa/" class="link-btn">دروع سايبر</a>
             <a href="https://cybershields.com.sa/ar-about-us" class="link-btn">من نحن</a>
-            <a href="https://cybershields.com.sa/services?category=84" class="link-btn">خدمات الامن السيبراني</a>
+            <a href="https://cybershields.com.sa/services?category=84" class="link-btn">خدمات الأمن السيبراني</a>
             <a href="https://cybershields.com.sa/services?category=85" class="link-btn">خدمات تقنية المعلومات</a>
-
             <a href="https://cybershields.com.sa/contact" class="link-btn">انضم إلى فريقنا</a>
         </div>
 
         <footer>© 2025 CYBER SHIELDS - جميع الحقوق محفوظة</footer>
     </div>
 </body>
-
 </html>
